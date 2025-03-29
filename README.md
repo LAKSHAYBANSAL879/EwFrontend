@@ -1,12 +1,75 @@
-# React + Vite
+# React User Management App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Overview
+This React application integrates with the Reqres API to perform basic user management functions, including authentication, listing users with pagination, and editing/deleting users.
 
-Currently, two official plugins are available:
+## Features
+### Level 1: Authentication Screen
+- Allows users to log in with the following credentials:
+  - **Email:** eve.holt@reqres.in
+  - **Password:** cityslicka
+- Uses `POST /api/login` to authenticate users.
+- On successful login, stores the token and navigates to the Users List page.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### Level 2: List All Users
+- Fetches and displays a paginated list of users using `GET /api/users?page=1`.
+- Shows user first name, last name, and avatar in a structured layout (table or cards).
+- Implements pagination or lazy loading.
 
-## Expanding the ESLint configuration
+### Level 3: Edit, Delete, and Update Users
+- **Edit:** Users can update their first name, last name, and email using `PUT /api/users/{id}`.
+- **Delete:** Users can be removed using `DELETE /api/users/{id}`.
+- Shows success/error messages based on API responses.
 
-If you are developing a production application, we recommend using TypeScript and enable type-aware lint rules. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### Live Hosted Link
+
+You can watch the hosted link at: [https://storied-tapioca-fd73a2.netlify.app/]
+
+## Installation & Setup
+1. Clone the repository:
+   ```sh
+   git clone https://github.com/LAKSHAYBANSAL879/EwFrontend.git
+  
+   ```
+2. Install dependencies:
+   ```sh
+   npm install
+   ```
+3. Start the development server:
+   ```sh
+   npm run dev
+   ```
+
+## Technologies Used
+- **React** for frontend UI.
+- **Axios** for API requests.
+- **React Router** for navigation.
+- **Tailwind CSS** for styling.
+- **React Toastify** for notifications.
+- **Lucide Icons** for icons
+
+## API Endpoints Used
+| Action        | Method | Endpoint                 | Description |
+|--------------|--------|-------------------------|-------------|
+| Login        | POST   | /api/login              | Authenticates the user. |
+| Fetch Users  | GET    | /api/users?page=1       | Retrieves a list of users. |
+| Edit User    | PUT    | /api/users/{id}         | Updates a user's details. |
+| Delete User  | DELETE | /api/users/{id}         | Removes a user. |
+
+## Project Structure
+```
+/react-reqres-user-management
+├── src
+│   ├── components
+│   │   ├── Login.jsx
+│   │   ├── UsersList.jsx
+│   │   └── LoginError.jsx
+│   ├── App.js
+│   ├── index.js
+│   └── styles.css
+└── README.md
+```
+
+
+
+
