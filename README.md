@@ -13,8 +13,8 @@ This React application integrates with the Reqres API to perform basic user mana
 
 ### Level 2: List All Users
 - Fetches and displays a paginated list of users using `GET /api/users?page=1`.
-- Shows user first name, last name, and avatar in a structured layout (table or cards).
-- Implements pagination or lazy loading.
+- Shows user first name, last name, and avatar in a structured layout.
+- Implements pagination and skeleton loading.
 
 ### Level 3: Edit, Delete, and Update Users
 - **Edit:** Users can update their first name, last name, and email using `PUT /api/users/{id}`.
